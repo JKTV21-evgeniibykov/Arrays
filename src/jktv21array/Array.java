@@ -39,26 +39,31 @@ public class Array {
         mid = mid / n;
         System.out.println("Average: " + mid);
         
-        int nArr = 5;
+        int nArr = 10;
         int[][] newArray = new int[nArr][nArr];
         int hSum = 0;
-        int[] vSum = {0,0,0,0,0};
+        int[] vSum = new int[nArr];
+        for (int x = 0; x < vSum.length; x++) vSum[x] = 0;
         int d1 = 0, d2 = 0;
         for(int i = 0; i < nArr; i++) {
             for(int j = 0; j < nArr; j++) {
                 newArray[i][j] = random.nextInt(10);
-                System.out.print(newArray[i][j] + " ");
+                System.out.printf("%4d", newArray[i][j]);
                 hSum = hSum + newArray[i][j];
                 vSum[j] = vSum[j] + newArray[i][j];
             }
-            System.out.print(" = " + hSum);
+            System.out.printf(" | %4d", hSum);
             hSum = 0;
             d1 = d1 + newArray[i][i];
             d2 = d2 + newArray[i][nArr-i-1];
             System.out.println();
         }
-        System.out.println(Arrays.toString(vSum));
-        System.out.println("d1 = " + d1);
+        for (int x = 0; x < vSum.length+2; x++) System.out.print("----");
+        System.out.println("");
+        for (int x = 0; x < vSum.length; x++) {
+            System.out.printf("%4d", vSum[x]);
+        }
+        System.out.println("\nd1 = " + d1);
         System.out.println("d2 = " + d2);
     }
 }
