@@ -12,7 +12,7 @@ import java.util.Arrays;
  *
  * @author Evgenii Bykov
  */
-public class Array {
+public class JKTV21Array {
 
     public static void main(String[] args) {
         int[] myArray = new int[20];
